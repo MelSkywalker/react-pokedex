@@ -5,12 +5,10 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Routes>
-        {/* Home */}
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </div>
+    <Routes>
+      {/* Home */}
+      <Route path="/" element={<Home />} />
+    </Routes>
   );
 }
 
