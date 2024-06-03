@@ -1,0 +1,15 @@
+import axios from "axios";
+
+const API_BASE_URL = 'https://pokeapi.co/api/v2/';
+
+async function fetchPokemonList(offset: number, limit: number) {
+    const response = await axios.get(`${API_BASE_URL}pokemon`, {
+        params: {
+            offset,
+            limit,
+        }
+    });
+    return response.data;
+}
+
+export { fetchPokemonList };
