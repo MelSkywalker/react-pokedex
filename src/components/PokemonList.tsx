@@ -1,7 +1,7 @@
 import { useState } from "react";
-import usePokemonList from "../hooks/usePokemonList";
 import { TYPES_NUM, TYPES_BASE_URL } from "../config/types";
-
+import usePokemonList from "../hooks/usePokemonList";
+import PokemonCard from "./PokemonCard";
 
 function PokemonList() {
     const [ offset, setOffset ] = useState(0);
@@ -20,14 +20,18 @@ function PokemonList() {
             <ul>
                 {pokemonList.map((pokemon) => (
                     <li key={`pokemon-item-${pokemon.name}`}>
-                        <p>{pokemon.name}</p>
+                        <PokemonCard
+                            name={pokemon.name}
+                            id={pokemon.id}
+                        />
+                        {/* <p>{pokemon.name}</p>
                             {pokemon.types.map(( {type} ) => (
                                 // <p key={`${pokemon.name}-type-${type.name}`}>{type.name}</p>
                                 <img
                                     key={`${pokemon.name}-type-${type.name}`}
                                     alt={`${type.name} type`}
                                     src={`${TYPES_BASE_URL}${TYPES_NUM[type.name]}.png`} />
-                            ))}
+                            ))} */}
                     </li>
                 ))}
             </ul>

@@ -45,6 +45,7 @@ export interface PokemonDetails {
             }
         }[]
     }[],
+    name: string,
     order: number,
     past_abilities: string[],
     past_types: string[],
