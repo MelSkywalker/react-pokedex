@@ -1,4 +1,9 @@
 // -------------- COLORS --------------
+$black: #000000;
+$gray800: #333333;
+$white: #FFFFFF;
+
+// -- types
 $water: #5090D6;
 $dragon: #0B6DC3;
 $electric: #F4D23C;
@@ -17,7 +22,7 @@ $psychic: #FA7179;
 $ground: #FA7179;
 $poison: #B567CE;
 $flying: #89AAE3;
-
+// -- light types
 $waterLight: #EBF1F8;
 $dragonLight: #E4EEF6;
 $electricLight: #FBF8E9;
@@ -75,6 +80,15 @@ $colors: (
     'poison-light': $poisonLight,
     'flying-light': $flyingLight
 );
+
+// -------------- SPACING --------------
+$paddingSmall: 4px;
+$paddingMedium: 12px;
+$paddingMediumLarge: 16px;
+
+// -------------- FONT SIZES --------------
+$fontSizeStandard: 12px;
+$fontSizeLarge: 21px;
 
 // -------------- BORDER RADIUS --------------
 $borderRadiusCard: 15px;

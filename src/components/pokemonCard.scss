@@ -2,17 +2,37 @@
 
 .pokemon-card {
     all: unset;
-
+    
     & > div {
-        grid-template-columns: 1fr auto;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
         border-radius: $borderRadiusCard;
-
     }
 
     .media-container {
         display: flex;
         justify-content: center;
         align-items: center;
+        border-radius: $borderRadiusCard;
+        padding: $paddingSmall;
+    }
+
+    .pokemon-card-image {
+        max-height: 60px;
+        max-width: 75px;
+    }
+
+    .data-container {
+        padding: $paddingMedium $paddingMediumLarge;
+    }
+
+    .types-container {
+        display: flex;
+        gap: $paddingSmall;
+    }
+
+    .type-image {
+        width: 70px;
     }
 }
 

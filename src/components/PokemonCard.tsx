@@ -1,6 +1,7 @@
 import classnames from "classnames";
-import { IMG_BASE_URL } from "../config/url";
+import { IMG_BASE_URL, TYPES_BASE_URL } from "../config/url";
 import { TYPES_NUM } from "../config/types";
+import { addZeros, capitalize } from "../utils/utils";
 import "./pokemonCard.scss";
 
 interface PokemonCardProps {
@@ -24,15 +25,26 @@ function PokemonCard({
     return (
         <a href={`/${name}`} className="pokemon-card">
             <div className={classnames(`color-${mainType}-light`)}>
+                <div className="data-container">
+                    <p>Nº {addZeros(id)}</p>
+                    <h2>{capitalize(name)}</h2>
+                    <div className="types-container">
+                        {types.map(( {type} ) => (
+                            <img
+                                src={`${TYPES_BASE_URL}${TYPES_NUM[type.name]}.png`}
+                                alt={`${type.name} type`}
+                                className="type-image"
+                                key={`${name}-type-${type.name}`}
+                            />
+                        ))}
+                    </div>
+                </div>
                 <div className={classnames('media-container', `color-${mainType}`)}>
                     <img
                         src={`${IMG_BASE_URL}${id}.svg`}
                         alt={name}
+                        className="pokemon-card-image"
                     />
-                </div>
-                <div className="data-container">
-                    <p>Nº {id}</p>
-                    <p>{name}</p>
                 </div>
             </div>
         </a>

@@ -3,6 +3,7 @@ import { useState } from "react";
 // import { TYPES_BASE_URL } from "../config/url";
 import usePokemonList from "../hooks/usePokemonList";
 import PokemonCard from "./PokemonCard";
+import "./pokemonList.scss";
 
 function PokemonList() {
     const [ offset, setOffset ] = useState(0);
@@ -15,10 +16,9 @@ function PokemonList() {
 
     if (loading) return <div>Loading...</div>
     if (error) return <div>Error: {error.message}</div>
-    // console.log(pokemonList[0].types[0].type.name);
 
     return (
-        <>
+        <div className="pokemon-list">
             <ul>
                 {pokemonList.map((pokemon) => (
                     <li key={`pokemon-item-${pokemon.name}`}>
@@ -27,19 +27,11 @@ function PokemonList() {
                             id={pokemon.id}
                             types={pokemon.types}
                         />
-                        {/* <p>{pokemon.name}</p>
-                            {pokemon.types.map(( {type} ) => (
-                                // <p key={`${pokemon.name}-type-${type.name}`}>{type.name}</p>
-                                <img
-                                    key={`${pokemon.name}-type-${type.name}`}
-                                    alt={`${type.name} type`}
-                                    src={`${TYPES_BASE_URL}${TYPES_NUM[type.name]}.png`} />
-                            ))} */}
                     </li>
                 ))}
             </ul>
             <button onClick={handleClick}>Load More</button>
-        </>
+        </div>
     )
 }
 

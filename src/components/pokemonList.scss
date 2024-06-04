@@ -1,0 +1,17 @@
+@import "../scss/variables.scss";
+
+.pokemon-list {
+    max-width: 90%;
+    margin: auto;
+
+    & > ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 0;
+        gap: $paddingMedium;
+    }
+
+    & > ul > li {
+        max-width: 100%;
+    }
+}
