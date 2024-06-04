@@ -12,4 +12,9 @@ async function fetchPokemonList(offset: number, limit: number) {
     return response.data;
 }
 
-export { fetchPokemonList };
+async function fetchPokemonDataByUrl(url: string) {
+    const response = await axios.get(url);
+    return response.data;
+}
+
+export { fetchPokemonList, fetchPokemonDataByUrl };

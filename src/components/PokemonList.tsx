@@ -19,6 +19,9 @@ function PokemonList() {
                 {pokemonList.map((pokemon) => (
                     <li key={`pokemon-item-${pokemon.name}`}>
                         <p>{pokemon.name}</p>
+                            {pokemon.types.map(( {type} ) => (
+                                <p key={`${pokemon.name}-type-${type.name}`}>{type.name}</p>
+                            ))}
                     </li>
                 ))}
             </ul>
