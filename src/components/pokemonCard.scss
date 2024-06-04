@@ -1,0 +1,28 @@
+@import "../scss/variables.scss";
+
+.pokemon-card {
+    all: unset;
+
+    & > div {
+        grid-template-columns: 1fr auto;
+        border-radius: $borderRadiusCard;
+
+    }
+
+    .media-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@mixin generate-color-classes($colors) {
+    @each $type, $color in $colors {
+        .color-#{$type} {
+            background-color: $color;
+        }
+    }
+}
+
+@include generate-color-classes($colors);
+

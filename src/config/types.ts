@@ -19,6 +19,4 @@ const TYPES_NUM = {
     fairy: "18"
 }
 
-const TYPES_BASE_URL = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/brilliant-diamond-and-shining-pearl/";
-
-export { TYPES_NUM, TYPES_BASE_URL }
+export { TYPES_NUM }

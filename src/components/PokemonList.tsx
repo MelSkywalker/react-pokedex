@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { TYPES_NUM, TYPES_BASE_URL } from "../config/types";
+// import { TYPES_NUM } from "../config/types";
+// import { TYPES_BASE_URL } from "../config/url";
 import usePokemonList from "../hooks/usePokemonList";
 import PokemonCard from "./PokemonCard";
 
@@ -14,6 +15,7 @@ function PokemonList() {
 
     if (loading) return <div>Loading...</div>
     if (error) return <div>Error: {error.message}</div>
+    // console.log(pokemonList[0].types[0].type.name);
 
     return (
         <>
@@ -23,6 +25,7 @@ function PokemonList() {
                         <PokemonCard
                             name={pokemon.name}
                             id={pokemon.id}
+                            types={pokemon.types}
                         />
                         {/* <p>{pokemon.name}</p>
                             {pokemon.types.map(( {type} ) => (

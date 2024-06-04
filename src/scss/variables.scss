@@ -1,0 +1,96 @@
+// -------------- COLORS --------------
+$water: #5090D6;
+$dragon: #0B6DC3;
+$electric: #F4D23C;
+$fairy: #EC8FE6;
+$ghost: #5269AD;
+$fire: #FF9D55;
+$ice: #73CEC0;
+$grass: #63BC5A;
+$bug: #91C12F;
+$fighting: #CE416B;
+$normal: #919AA2;
+$dark: #5A5465;
+$steel: #5A8EA2;
+$rock: #C5B78C;
+$psychic: #FA7179;
+$ground: #FA7179;
+$poison: #B567CE;
+$flying: #89AAE3;
+
+$waterLight: #EBF1F8;
+$dragonLight: #E4EEF6;
+$electricLight: #FBF8E9;
+$fairyLight: #FBF1FA;
+$ghostLight: #EBEDF4;
+$fireLight: #FCF3EB;
+$iceLight: #F1FBF9;
+$grassLight: #EDF6EC;
+$bugLight: #F1F6E8;
+$fightingLight: #F8E9EE;
+$normalLight: #F1F2F3;
+$darkLight: #ECEBED;
+$steelLight: #ECF1F3;
+$rockLight: #F7F5F1;
+$psychicLight: #FCEEEF;
+$groundLight: #F9EFEA;
+$poisonLight: #F5EDF8;
+$flyingLight: #F1F4FA;
+
+$colors: (
+    'water': $water,
+    'dragon': $dragon,
+    'electric': $electric,
+    'fairy': $fairy,
+    'ghost': $ghost,
+    'fire': $fire,
+    'ice': $ice,
+    'grass': $grass,
+    'bug': $bug,
+    'fighting': $fighting,
+    'normal': $normal,
+    'dark': $dark,
+    'steel': $steel,
+    'rock': $rock,
+    'psychic': $psychic,
+    'ground': $ground,
+    'poison': $poison,
+    'flying': $flying,
+    'water-light': $waterLight,
+    'dragon-light': $dragonLight,
+    'electric-light': $electricLight,
+    'fairy-light': $fairyLight,
+    'ghost-light': $ghostLight,
+    'fire-light': $fireLight,
+    'ice-light': $iceLight,
+    'grass-light': $grassLight,
+    'bug-light': $bugLight,
+    'fighting-light': $fightingLight,
+    'normal-light': $normalLight,
+    'dark-light': $darkLight,
+    'steel-light': $steelLight,
+    'rock-light': $rockLight,
+    'psychic-light': $psychicLight,
+    'ground-light': $groundLight,
+    'poison-light': $poisonLight,
+    'flying-light': $flyingLight
+);
+
+// -------------- BORDER RADIUS --------------
+$borderRadiusCard: 15px;
+
+// -------------- BREAKPOINTS --------------
+$breakpoints: (
+    medium: 640px,
+    large: 1024px,
+    xlarge: 1200px,
+    xxlarge: 1440px
+) !default;
+
+@mixin breakpoint($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+}
