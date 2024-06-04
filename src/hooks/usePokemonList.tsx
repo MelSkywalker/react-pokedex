@@ -12,7 +12,7 @@ function usePokemonList(offset: number, limit: number): { pokemonList: PokemonLi
        const fetchData = async () => {
         if (prevOffsetRef.current === offset) return; // Don't fetch duplicates
             try {
-                const data = await fetchPokemonList(offset, limit);
+                const data = await fetchPokemonList(offset, Math.min(limit, 1025 - offset));
                 const pokemonWithDetailsList = await Promise.all(
                     data.results.map(async (pokemon: PokemonListItem) => {
                         const pokemonDetails = await fetchPokemonDataByUrl(pokemon.url);

@@ -1,13 +1,11 @@
 import { useState } from "react";
-// import { TYPES_NUM } from "../config/types";
-// import { TYPES_BASE_URL } from "../config/url";
 import usePokemonList from "../hooks/usePokemonList";
 import PokemonCard from "./PokemonCard";
 import "./pokemonList.scss";
 
 function PokemonList() {
     const [ offset, setOffset ] = useState(0);
-    const limit = 20;
+    let limit: number = 20;
     const { pokemonList, loading, error } = usePokemonList(offset, limit);
 
     function handleClick(): void {

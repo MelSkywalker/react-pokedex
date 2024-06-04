@@ -41,7 +41,7 @@ function PokemonCard({
                 </div>
                 <div className={classnames('media-container', `color-${mainType}`)}>
                     <img
-                        src={`${IMG_BASE_URL}${id}.svg`}
+                        src={`${IMG_BASE_URL}${id}.png`}
                         alt={name}
                         className="pokemon-card-image"
                     />

@@ -9,6 +9,18 @@
         grid-template-columns: 1fr;
         padding: 0;
         gap: $paddingMedium;
+
+        @include breakpoint(medium) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include breakpoint(large) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include breakpoint(xlarge) {
+            grid-template-columns: repeat(4, 1fr);
+        }
     }
 
     & > ul > li {
