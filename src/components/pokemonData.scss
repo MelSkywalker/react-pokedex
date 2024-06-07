@@ -1,0 +1,71 @@
+@import "../scss/variables.scss";
+
+.pokemon-data {
+    .img-container {
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        height: 300px;
+        overflow: hidden;
+    }
+
+    .content {
+        padding: 0 $paddingMediumSmall;
+    }
+
+    .pokemon-data-image {
+        height: 70%;
+        width: auto;
+    }
+
+    h1 {
+        font-size: $fontSizeXLarge;
+    }
+
+    h2 {
+        color: $gray600;
+        font-size: $fontSizeMedium;
+        margin-bottom: $paddingXLarge;
+    }
+
+    .types-container {
+        margin-bottom: $paddingXLarge;
+    }
+
+    .data-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: $paddingLarge;
+        row-gap: $paddingMedium;
+    }
+}
+
+@mixin generate-img-container-classes($colors) {
+    @each $type, $color in $colors {
+        // Extraer la parte antes de '-light' si existe
+        $base-type: if(str-index($type, '-light'), str-slice($type, 1, str-index($type, '-light') - 1), $type);
+
+        .bg-img-#{$type} {
+            position: relative;
+            background-image: url('../assets/images/types/#{$base-type}.svg');
+            background-repeat: no-repeat;
+            background-position: 50% 20%;
+            background-size: 60% auto;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 115%;
+                height: 90%;
+                background-color: $color;
+                border-radius: 0 0 50% 50%;
+                z-index: -1;
+            }
+        }
+    }
+}
+
+@include generate-img-container-classes($colors);

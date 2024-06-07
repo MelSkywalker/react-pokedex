@@ -1,13 +1,14 @@
 import classnames from "classnames";
-import { IMG_BASE_URL, TYPES_BASE_URL, TYPES_NUM } from "../config/constants";
+import { IMG_BASE_URL } from "../config/constants";
 import { addZeros, capitalize } from "../utils/utils";
-import { PokemonType } from "../types/pokemon";
+import { PokemonTypeData } from "../types/pokemon";
+import TypesContainer from "./TypesContainer";
 import "./pokemonCard.scss";
 
 interface PokemonCardProps {
     name: string,
     id: number,
-    types: PokemonType[]
+    types: PokemonTypeData[]
 }
 
 function PokemonCard({
@@ -22,16 +23,7 @@ function PokemonCard({
                 <div className="data-container">
                     <p>Nº {addZeros(id)}</p>
                     <h2>{capitalize(name)}</h2>
-                    <div className="types-container">
-                        {types.map(( {type} ) => (
-                            <img
-                                src={`${TYPES_BASE_URL}${TYPES_NUM[type.name]}.png`}
-                                alt={`${type.name} type`}
-                                className="type-image"
-                                key={`${name}-type-${type.name}`}
-                            />
-                        ))}
-                    </div>
+                    <TypesContainer types={types} pokemonName={name} />
                 </div>
                 <div className={classnames('media-container', `color-${mainType}`)}>
                     <img

@@ -10,4 +10,16 @@ function capitalize(str: string): string {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-export { addZeros, capitalize };
+function fixedProperty(property: number): string {
+    return (property / 10).toFixed(1);
+}
+
+function formatWeight(weight: number): string {
+    return `${fixedProperty(weight)} kg`;
+}
+
+function formatHeight(height: number): string {
+    return `${fixedProperty(height)} m`;
+}
+
+export { addZeros, capitalize, formatWeight, formatHeight };

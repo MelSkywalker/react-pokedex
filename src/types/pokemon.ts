@@ -247,11 +247,11 @@ export interface PokemonDetails {
             url: string
         }
     }[],
-    types: PokemonType[],
+    types: PokemonTypeData[],
     weight: number
 }
 
-export interface PokemonType {
+export interface PokemonTypeData {
     slog: number,
     type: {
         name: keyof typeof TYPES_NUM,

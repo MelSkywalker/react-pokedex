@@ -1,0 +1,13 @@
+@import "../scss/variables.scss";
+
+.types-container {
+    display: flex;
+
+    &.small-spacing {
+        gap: $paddingSmall;
+    }
+
+    &.medium-spacing {
+        gap: $paddingMediumSmall;
+    }
+}
