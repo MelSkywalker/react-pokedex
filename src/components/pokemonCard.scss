@@ -45,7 +45,7 @@
         .color-#{$type} {
             background-color: $color;
             @if not str-index($type, '-light') {
-                background-image: url('../assets/types/#{$base-type}.svg');
+                background-image: url('../assets/images/types/#{$base-type}.svg');
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: 70px;

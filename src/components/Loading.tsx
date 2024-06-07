@@ -1,4 +1,4 @@
-import magikarp from "../assets/magikarp.svg";
+import magikarp from "../assets/images/magikarp.svg";
 import "./loading.scss";
 
 function Loading() {
