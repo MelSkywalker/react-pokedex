@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import usePokemonDetails from "../hooks/usePokemonDetails";
-
-const IMG_BASE_URL = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/";
+import PokemonData from "../components/PokemonData";
 
 function PokemonPage() {
     const { pokemon } = useParams();
@@ -15,16 +14,14 @@ function PokemonPage() {
 
     return (
         <div>
-            <h1>Pokemon Page</h1>
             {pokemonDetails && (
-                <div>
-                    <p>No. {pokemonDetails.id}</p>
-                    <p>{pokemonDetails.name}</p>
-                    <img
-                        src={`${IMG_BASE_URL}${pokemonDetails.id}.svg`}
-                        alt={pokemonDetails.name}
-                    />
-                </div>
+                <PokemonData
+                    name={pokemonDetails.name}
+                    id={pokemonDetails.id}
+                    types={pokemonDetails.types}
+                    height={pokemonDetails.height}
+                    weight={pokemonDetails.weight}
+                />
             )}
         </div>
     )

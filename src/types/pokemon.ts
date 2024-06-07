@@ -1,4 +1,4 @@
-import { TYPES_NUM } from "../config/types"
+import { TYPES_NUM } from "../config/constants"
 
 export interface PokemonListItem extends PokemonDetails {
     name: string,
@@ -247,11 +247,14 @@ export interface PokemonDetails {
             url: string
         }
     }[],
-    types: {
-        slot: number,
-        type: {
-            name: keyof typeof TYPES_NUM,
-            url: string
-        }
-    }[]
+    types: PokemonType[],
+    weight: number
+}
+
+export interface PokemonType {
+    slog: number,
+    type: {
+        name: keyof typeof TYPES_NUM,
+        url: string
+    }
 }

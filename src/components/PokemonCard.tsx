@@ -1,19 +1,13 @@
 import classnames from "classnames";
-import { IMG_BASE_URL, TYPES_BASE_URL } from "../config/url";
-import { TYPES_NUM } from "../config/types";
+import { IMG_BASE_URL, TYPES_BASE_URL, TYPES_NUM } from "../config/constants";
 import { addZeros, capitalize } from "../utils/utils";
+import { PokemonType } from "../types/pokemon";
 import "./pokemonCard.scss";
 
 interface PokemonCardProps {
     name: string,
     id: number,
-    types: {
-        slot: number,
-        type: {
-            name: keyof typeof TYPES_NUM,
-            url: string
-        }
-    }[]
+    types: PokemonType[]
 }
 
 function PokemonCard({
