@@ -1,12 +1,15 @@
 import classnames from "classnames";
-import { PokemonTypeData, PokemonAbility } from "../types/pokemon";
+import { PokemonTypeData, PokemonAbility, PokemonType } from "../types/pokemon";
 import { IMG_BASE_URL, TYPES_BASE_URL, TYPES_NUM } from "../config/constants";
 import { addZeros, capitalize, formatWeight, formatHeight } from "../utils/utils";
+import { calculatePokemonWeaknesses } from "../utils/typesChart";
+
+import Data from "./Data";
+import TypesContainer from "./TypesContainer";
+
 import weightImg from "../assets/images/data/weight.svg";
 import heightImg from "../assets/images/data/height.svg";
 import abilitiesImg from "../assets/images/data/abilities.svg";
-import Data from "./Data";
-import TypesContainer from "./TypesContainer";
 
 import "./pokemonData.scss";
 
@@ -28,6 +31,9 @@ function PokemonData({
     abilities
 }: PokemonDataProps) {
     const mainType = types[0].type.name;
+    const typeNames: PokemonType[] = types.map(type => type.type.name);
+    const weaknesses: PokemonType[] = calculatePokemonWeaknesses(typeNames);
+    console.log(weaknesses);
 
     return (
         <div className="pokemon-data">
@@ -41,11 +47,15 @@ function PokemonData({
             <div className="content">
                 <h1>{capitalize(name)}</h1>
                 <h2>Nº. {addZeros(id)}</h2>
-                <TypesContainer types={types} pokemonName={name} spacingSize="medium" />
+                <TypesContainer types={typeNames} pokemonName={name} spacingSize="medium" />
                 <div className="data-container">
                     <Data data="weigth" value={formatWeight(weight)} imgSrc={weightImg} />
                     <Data data="height" value={formatHeight(height)} imgSrc={heightImg} />
                     <Data data="ability" value={capitalize(abilities[0].ability.name)} imgSrc={abilitiesImg} />
+                </div>
+                <div className="weaknesses-container">
+                    <h3>Weaknesses</h3>
+                    <TypesContainer types={weaknesses} pokemonName={name} spacingSize="medium" />
                 </div>
             </div>
         </div>

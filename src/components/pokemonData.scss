@@ -10,7 +10,7 @@
     }
 
     .content {
-        padding: 0 $paddingMediumSmall;
+        padding: 0 $paddingMediumSmall $paddingMediumSmall;
     }
 
     .pokemon-data-image {
@@ -37,6 +37,13 @@
         grid-template-columns: 1fr 1fr;
         column-gap: $paddingLarge;
         row-gap: $paddingMedium;
+        margin-bottom: $paddingXLarge;
+    }
+
+    .weaknesses-container {
+        p {
+            margin-bottom: $paddingMedium;
+        }
     }
 }
 

@@ -17,13 +17,14 @@ function PokemonCard({
     types,
 }: PokemonCardProps) {
     const mainType = types[0].type.name;
+    const typeNames = types.map(type => type.type.name);
     return (
         <a href={`/${name}`} className="pokemon-card">
             <div className={classnames(`color-${mainType}-light`)}>
                 <div className="data-container">
                     <p>Nº {addZeros(id)}</p>
                     <h2>{capitalize(name)}</h2>
-                    <TypesContainer types={types} pokemonName={name} />
+                    <TypesContainer types={typeNames} pokemonName={name} />
                 </div>
                 <div className={classnames('media-container', `color-${mainType}`)}>
                     <img

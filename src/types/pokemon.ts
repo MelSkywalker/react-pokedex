@@ -1,5 +1,7 @@
 import { TYPES_NUM } from "../config/constants"
 
+export type PokemonType = 'normal' | 'fire' | 'water' | 'electric' | 'grass' | 'ice' | 'fighting' | 'poison' | 'ground' | 'flying' | 'psychic' | 'bug' | 'rock' | 'ghost' | 'dragon' | 'dark' | 'steel' | 'fairy';
+
 export interface PokemonListItem extends PokemonDetails {
     name: string,
     url: string
