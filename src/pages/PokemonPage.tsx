@@ -21,6 +21,7 @@ function PokemonPage() {
                     types={pokemonDetails.types}
                     height={pokemonDetails.height}
                     weight={pokemonDetails.weight}
+                    abilities={pokemonDetails.abilities}
                 />
             )}
         </div>

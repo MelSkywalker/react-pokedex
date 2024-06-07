@@ -2,6 +2,7 @@
 $black: #000000;
 $gray800: #333333;
 $gray700: #4D4D4D;
+$gray600: #666666;
 $white: #FFFFFF;
 $red: #CD3131;
 
@@ -85,11 +86,13 @@ $colors: (
 
 // -------------- SPACING --------------
 $paddingSmall: 4px;
+$paddingMediumSmall: 8px;
 $paddingMedium: 12px;
 $paddingMediumLarge: 16px;
 
 // -------------- FONT SIZES --------------
 $fontSizeStandard: 12px;
+$fontSizeMedium: 18px;
 $fontSizeLarge: 21px;
 
 // -------------- BORDER RADIUS --------------

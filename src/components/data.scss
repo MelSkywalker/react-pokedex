@@ -1,0 +1,29 @@
+@import "../scss/variables.scss";
+
+.data {
+    .data-title {
+        img {
+            margin-right: $paddingSmall;
+            vertical-align: middle;
+        }
+        p {
+            display: inline-block;
+        }
+    }
+
+    .data-text {
+        color: $gray600;
+    }
+
+    .value {
+        border: 1px $gray600 solid;
+        border-radius: $borderRadiusCard;
+        padding: $paddingMediumSmall;
+        text-align: center;
+
+        p {
+            font-size: $fontSizeMedium;
+            color: $black;
+        }
+    }
+}

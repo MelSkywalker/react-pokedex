@@ -6,7 +6,7 @@ export interface PokemonListItem extends PokemonDetails {
 }
 
 export interface PokemonDetails {
-    abilities: string[],
+    abilities: PokemonAbility[],
     base_experience: number,
     cries: {
         latest: string,
@@ -257,4 +257,13 @@ export interface PokemonType {
         name: keyof typeof TYPES_NUM,
         url: string
     }
+}
+
+export interface PokemonAbility {
+    ability: {
+        name: string,
+        url: string
+    },
+    is_hidden: boolean,
+    slot: number
 }

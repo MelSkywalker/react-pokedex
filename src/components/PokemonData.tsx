@@ -1,6 +1,9 @@
-import { PokemonType, } from "../types/pokemon";
+import { PokemonType, PokemonAbility } from "../types/pokemon";
 import { IMG_BASE_URL, TYPES_BASE_URL, TYPES_NUM } from "../config/constants";
 import { addZeros, capitalize } from "../utils/utils";
+import weightImg from "../assets/images/data/weight.svg";
+import heightImg from "../assets/images/data/height.svg";
+import abilitiesImg from "../assets/images/data/abilities.svg";
 import Data from "./Data";
 
 interface PokemonDataProps {
@@ -9,6 +12,7 @@ interface PokemonDataProps {
     height: number,
     weight: number,
     types: PokemonType[],
+    abilities: PokemonAbility[],
   }
 
 function PokemonData({
@@ -17,6 +21,7 @@ function PokemonData({
     types,
     height,
     weight,
+    abilities
 }: PokemonDataProps) {
     return (
         <div>
@@ -36,8 +41,9 @@ function PokemonData({
                     />
                 ))}
             </div>
-            <Data data="weigth" value={weight} />
-            <Data data="height" value={height} />
+            <Data data="weigth" value={weight} imgSrc={weightImg} />
+            <Data data="height" value={height} imgSrc={heightImg} />
+            <Data data="abilities" value={capitalize(abilities[0].ability.name)} imgSrc={abilitiesImg} />
         </div>
     )
 }
