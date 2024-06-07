@@ -3,6 +3,8 @@
 .pokemon-list {
     max-width: 90%;
     margin: auto;
+    display: flex;
+    flex-direction: column;
 
     & > ul {
         display: grid;
@@ -25,5 +27,22 @@
 
     & > ul > li {
         max-width: 100%;
+    }
+
+    .load-more {
+        background-color: $red;
+        color: $white;
+        font-size: $fontSizeLarge;
+        padding: $paddingMedium;
+        border-radius: $borderRadiusCard;
+        margin-top: $paddingMedium;
+        margin-bottom: $paddingMedium;
+        cursor: pointer;
+
+        &:hover {
+            color: $red;
+            background-color: $white;
+            border: 2px solid $red;
+        }
     }
 }

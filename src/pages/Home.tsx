@@ -1,11 +1,12 @@
 import PokemonList from "../components/PokemonList";
+import './home.scss';
 
 function Home () {
     return (
-        <>
-            <h1>Home</h1>
+        <div className="home-page">
+            <div className="head" />
             <PokemonList />
-        </>
+        </div>
     )
 }
 

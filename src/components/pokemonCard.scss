@@ -2,6 +2,7 @@
 
 .pokemon-card {
     all: unset;
+    cursor: pointer;
     
     & > div {
         display: grid;
