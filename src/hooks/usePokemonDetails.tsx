@@ -52,14 +52,13 @@ function usePokemonDetails(pokemonName: string | undefined) {
                 const evolutionChainUrl: string = data.evolution_chain.url;
                 const evolutionChainResponse: EvolutionChainResponse = await fetchEvolutionChain(evolutionChainUrl);
                 const evolutionChainNames = getEvolutionChainPokemonNames(evolutionChainResponse);
-                const evolutionChainDataPromises = evolutionChainNames.length > 1 ?
-                evolutionChainNames.map(async (pokemon) => {
+                const evolutionChainDataPromises = evolutionChainNames.map(async (pokemon) => {
                     if (pokemon === pokemonName) {
                         return data
                     }
                     const evolData = await fetchPokemonDataByName(pokemon);
                     return evolData;
-                }): [];
+                });
                 const evolutionChainData = await Promise.all(evolutionChainDataPromises);
                 setEvolutionChain(evolutionChainData);
             } catch (error) {

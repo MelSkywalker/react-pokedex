@@ -1,8 +1,10 @@
 // -------------- COLORS --------------
 $black: #000000;
+$gray900: #1A1A1A;
 $gray800: #333333;
 $gray700: #4D4D4D;
 $gray600: #666666;
+$gray100: #E6E6E6;
 $white: #FFFFFF;
 $red: #CD3131;
 
@@ -94,12 +96,17 @@ $paddingXLarge: 24px;
 
 // -------------- FONT SIZES --------------
 $fontSizeStandard: 12px;
+$fontSizeMid: 14px;
 $fontSizeMedium: 18px;
 $fontSizeLarge: 21px;
 $fontSizeXLarge: 32px;
 
 // -------------- BORDER RADIUS --------------
 $borderRadiusCard: 15px;
+$borderRadiusMax: 90px;
+
+// -------------- CONTAINER --------------
+$containerWidth: 1000px;
 
 // -------------- BREAKPOINTS --------------
 $breakpoints: (

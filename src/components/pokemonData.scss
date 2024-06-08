@@ -1,6 +1,6 @@
 @import "../scss/variables.scss";
 
-.pokemon-data {
+.pokemon-data {    
     .img-container {
         display: flex;
         justify-content: center;
@@ -10,7 +10,20 @@
     }
 
     .content {
-        padding: 0 $paddingMediumSmall $paddingMediumSmall;
+        padding: 0 $paddingMediumSmall;
+        max-width: $containerWidth;
+        margin: auto;
+    }
+
+    .content .types-container {
+        margin-bottom: $paddingXLarge;
+    }
+
+    .description {
+        font-size: $fontSizeMid;
+        color: $gray700;
+        font-weight: 500;
+        margin-bottom: $paddingLarge;
     }
 
     .pokemon-data-image {
@@ -28,10 +41,6 @@
         margin-bottom: $paddingXLarge;
     }
 
-    .types-container {
-        margin-bottom: $paddingXLarge;
-    }
-
     .data-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -45,11 +54,16 @@
             margin-bottom: $paddingMedium;
         }
     }
+
+    .evolutions {
+        padding: $paddingMediumLarge;
+        max-width: $containerWidth;
+        margin: auto;
+    }
 }
 
 @mixin generate-img-container-classes($colors) {
     @each $type, $color in $colors {
-        // Extraer la parte antes de '-light' si existe
         $base-type: if(str-index($type, '-light'), str-slice($type, 1, str-index($type, '-light') - 1), $type);
 
         .bg-img-#{$type} {

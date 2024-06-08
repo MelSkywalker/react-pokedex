@@ -1,0 +1,76 @@
+@import "../scss/variables.scss";
+
+.evolution-chain {
+    border: 1px $gray100 solid;
+    border-radius: $borderRadiusCard;
+    padding: $paddingXLarge $paddingMediumLarge;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: $paddingXLarge;
+}
+
+.evolution-chain-item {
+    border: 1px $gray100 solid;
+    border-radius: $borderRadiusMax;
+    display: grid;
+    grid-template-columns: auto auto;
+    max-width: 310px;
+
+    .evolution-item-img {
+        height: 70px;
+        width: auto;
+    }
+
+    .evolution-data-container {
+        padding: $paddingMediumSmall;
+    }
+
+    .evol-name {
+        font-size: $fontSizeMedium;
+        color: $gray900;
+    }
+
+    .evol-num {
+        font-size: $fontSizeStandard;
+        color: $gray700;
+    }
+
+    .type-image {
+        width: 68px;
+    }
+}
+
+@mixin generate-img-container-classes($colors) {
+    @each $type, $color in $colors {
+        $base-type: if(str-index($type, '-light'), str-slice($type, 1, str-index($type, '-light') - 1), $type);
+
+        .evol-img-#{$type} {
+            position: relative;
+            background-image: url('../assets/images/types/#{$base-type}.svg');
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: 60px auto;
+            width: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+                height: 100%;
+                background-color: $color;
+                border-radius: 90px;
+                z-index: -1;
+            }
+        }
+    }
+}
+
+@include generate-img-container-classes($colors);

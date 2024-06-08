@@ -4,13 +4,17 @@ import PokemonData from "../components/PokemonData";
 
 function PokemonPage() {
     const { pokemon } = useParams();
-    // console.log(pokemon);
     const { pokemonDetails, evolutionChain, loading, error } = usePokemonDetails(pokemon);
-    console.log(evolutionChain);
 
     if (loading) return <div>Loading...</div>
     if (error) return <div>Error: {error.message}</div>
-    // console.log(pokemonDetails);
+    console.log(pokemonDetails);
+
+    const simplifiedEvolutionChain = evolutionChain.map((pokemon) => ({
+        name: pokemon.name,
+        id: pokemon.id,
+        types: pokemon.types,
+    }));
 
     return (
         <div>
@@ -19,9 +23,11 @@ function PokemonPage() {
                     name={pokemonDetails.name}
                     id={pokemonDetails.id}
                     types={pokemonDetails.types}
+                    description={pokemonDetails.flavor_text_entries[21].flavor_text}
                     height={pokemonDetails.height}
                     weight={pokemonDetails.weight}
                     abilities={pokemonDetails.abilities}
+                    evolutionChain={simplifiedEvolutionChain}
                 />
             )}
         </div>
