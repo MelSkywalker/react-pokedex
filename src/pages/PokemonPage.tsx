@@ -5,11 +5,11 @@ import PokemonData from "../components/PokemonData";
 function PokemonPage() {
     const { pokemon } = useParams();
     // console.log(pokemon);
-    const { pokemonDetails, loading, error } = usePokemonDetails(pokemon);
+    const { pokemonDetails, evolutionChain, loading, error } = usePokemonDetails(pokemon);
+    console.log(evolutionChain);
 
     if (loading) return <div>Loading...</div>
     if (error) return <div>Error: {error.message}</div>
-
     // console.log(pokemonDetails);
 
     return (

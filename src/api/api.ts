@@ -22,4 +22,14 @@ async function fetchPokemonDataByName(name: string) {
     return response.data;
 }
 
-export { fetchPokemonList, fetchPokemonDataByUrl, fetchPokemonDataByName };
+async function fetchPokemonSpecies(name: string) {
+    const response = await axios.get(`${API_BASE_URL}pokemon-species/${name}`);
+    return response.data;
+}
+
+async function fetchEvolutionChain(url: string) {
+    const response = await axios.get(url);
+    return response.data;
+}
+
+export { fetchPokemonList, fetchPokemonDataByUrl, fetchPokemonDataByName, fetchPokemonSpecies, fetchEvolutionChain };
