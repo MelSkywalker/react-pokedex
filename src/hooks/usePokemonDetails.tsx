@@ -69,7 +69,7 @@ function usePokemonDetails(pokemonName: string | undefined) {
             }
         };
         fetchData();
-    }, [pokemonName]);
+    }, [pokemonName, error]);
 
     return { pokemonDetails, evolutionChain, loading, error };
 }

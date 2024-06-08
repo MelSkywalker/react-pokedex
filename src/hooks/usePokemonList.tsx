@@ -30,7 +30,7 @@ function usePokemonList(offset: number, limit: number): { pokemonList: PokemonLi
         };
 
         fetchData();
-    }, [offset])
+    }, [offset, limit, pokemonList])
 
     return { pokemonList, loading, error };
 }
