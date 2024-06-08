@@ -10,7 +10,6 @@ interface TypesContainerProps {
 }
 
 function TypesContainer({ types, pokemonName, spacingSize = 'small'}: TypesContainerProps) {
-    console.log('=====', types);
     return (
         <div className={classnames('types-container', `${spacingSize}-spacing`)}>
             {types.map((type) => (

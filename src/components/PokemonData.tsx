@@ -33,8 +33,6 @@ function PokemonData({
     const mainType = types[0].type.name;
     const typeNames: PokemonType[] = types.map(type => type.type.name);
     const weaknesses: PokemonType[] = calculatePokemonWeaknesses(typeNames);
-    console.log(weaknesses);
-
     return (
         <div className="pokemon-data">
             <div className={classnames('img-container', `bg-img-${mainType}`)}>

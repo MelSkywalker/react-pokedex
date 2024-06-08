@@ -4,13 +4,13 @@ import PokemonData from "../components/PokemonData";
 
 function PokemonPage() {
     const { pokemon } = useParams();
-    console.log(pokemon);
+    // console.log(pokemon);
     const { pokemonDetails, loading, error } = usePokemonDetails(pokemon);
 
     if (loading) return <div>Loading...</div>
     if (error) return <div>Error: {error.message}</div>
 
-    console.log(pokemonDetails);
+    // console.log(pokemonDetails);
 
     return (
         <div>

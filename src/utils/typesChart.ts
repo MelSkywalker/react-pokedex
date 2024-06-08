@@ -87,16 +87,22 @@ export function calculatePokemonWeaknesses(types: PokemonType[]): PokemonType[] 
     if (types.length === 1) return typeChart[types[0]].weakAgainst;
     
     const [type1, type2] = types;
+    let type1Weaknesses = typeChart[type1].weakAgainst;
+    let type2Weaknesses = typeChart[type2].weakAgainst;
+    
+    // if a type has itself in its weaknesses, keep the weakness. If it is not, and it is part of the other type weaknesses, remove it
+    let selfWeaknesses: PokemonType[] = [];
+    type2Weaknesses.includes(type1) && !type1Weaknesses.includes(type1) && selfWeaknesses.push(type1)
+    type1Weaknesses.includes(type2) && !type2Weaknesses.includes(type2) && selfWeaknesses.push(type2)
+    
+    // Join both types weaknesses
     let weaknesses = typeChart[type1].weakAgainst.concat(typeChart[type2].weakAgainst);
+
+    // Remove duplicates
     weaknesses = [...new Set(weaknesses)];
-    weaknesses.filter(weakness => weakness != type1);
-    weaknesses = weaknesses.filter(weakness => weakness != type2);
-    const weaknessesToRemove = weaknesses.filter(
-      weakness =>
-      typeChart[type1].strongAgainst.includes(weakness) ||
-      typeChart[type2].strongAgainst.includes(weakness));
+
     const filteredWeaknesses = weaknesses.filter(
-      weakness => !weaknessesToRemove.includes(weakness)
+      weakness => !selfWeaknesses.includes(weakness)
     );
     return filteredWeaknesses;
 }
