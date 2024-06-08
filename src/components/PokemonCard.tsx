@@ -1,4 +1,5 @@
 import classnames from "classnames";
+import { Link } from "react-router-dom";
 import { IMG_BASE_URL } from "../config/constants";
 import { addZeros, capitalize } from "../utils/utils";
 import { PokemonTypeData } from "../types/pokemon";
@@ -19,7 +20,7 @@ function PokemonCard({
     const mainType = types[0].type.name;
     const typeNames = types.map(type => type.type.name);
     return (
-        <a href={`/${name}`} className="pokemon-card">
+        <Link to={`/${name}`} className="pokemon-card">
             <div className={classnames(`color-${mainType}-light`)}>
                 <div className="data-container">
                     <p>Nº {addZeros(id)}</p>
@@ -34,7 +35,7 @@ function PokemonCard({
                     />
                 </div>
             </div>
-        </a>
+        </Link>
     )
 }
 
