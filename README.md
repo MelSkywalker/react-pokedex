@@ -2,6 +2,9 @@
 
 I created this simple app to practice my react + typescript skills. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Live
+[See it live](https://melskywalker.github.io/react-pokedex/)
+
 ## UI
 I used the [Pokedex app design by Junior Saraiva on Figma](https://www.figma.com/community/file/1202971127473077147).
 
